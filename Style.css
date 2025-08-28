@@ -1,0 +1,417 @@
+/* style.css */
+
+/* ডেক্সটপে fixed header */
+#mainHeader {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 50;
+  transition: all 0.3s;
+  background-color: #f5d0fe;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* scroll করলে হালকা transparent হবে */
+#mainHeader.transparent-bg {
+  background-color: rgba(215, 176, 250, 0.75);
+  box-shadow: none; 
+  backdrop-filter: saturate(180%) blur(20px);
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+
+/* মোবাইল/ছোট স্ক্রিনে */
+@media (max-width: 640px) {
+  #mainHeader {
+    position: fixed;
+    box-shadow: none;
+    background-color: rgb(255, 255, 255) !important;
+  }
+  #mainHeader.transparent-bg {
+    background-color: rgba(215, 176, 250, 0.75) !important;
+    box-shadow: none; 
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  #mainHeader nav a[href="#feature"] {
+    display: none !important;
+  }
+}
+  
+
+
+/* হিরো সেকশনের মার্জিন টপ যাতে header এর নিচে চলে */
+.mt-header {
+  margin-top: 72px; /* header এর উচ্চতার সমান (প্রায়) */
+}
+
+.app-section {
+  position: relative;
+  color: #fae8ff;;
+
+  border: 50px solid #fae8ff;;
+  border-radius: 20px;
+  overflow: hidden; /* border-radius এর বাইরে কিছু কাটবে */
+}
+
+/* Background image with opacity */
+.app-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('BG/BG2.gif') no-repeat center;
+  background-size: contain; /* contain অনুযায়ী থাকবে */
+  opacity: 0.6; /* এখানে কমাও/বাড়াও (0.1 - 1) */
+  z-index: -2;
+  border-radius: inherit;
+}
+
+/* Gradient overlay */
+.app-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(231, 54, 201, 0.7) 0%,
+    rgba(98, 39, 133, 0.7) 100%
+  );
+  z-index: -1;
+  border-radius: inherit;
+}
+
+@media (max-width: 640px) {
+  .app-section {
+    border: 20px solid #fae8ff;;   /* mobile এ ছোট border */
+    border-radius: 40px;        /* চাইলে radius-ও ছোট করতে পারো */
+  }
+}
+/* ফিক্সড পুরো পেজ বর্ডার */
+html {
+  position: relative;
+}
+
+#carousel {
+  background: radial-gradient(
+    circle at center,
+    rgba(231, 54, 201, 0.7) 0%,
+    rgba(98, 39, 133, 0.7) 100%
+  );
+  padding: 60px 80px; /* 60px top-bottom, 80px left-right */
+  text-align: center;
+
+  border-radius: 50% 20% / 20% 50%;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  max-width: 100%; /* চাইলে ছোট করো */
+  margin: 0 auto;
+}
+
+#Contact {
+  padding: 60px 80px; /* 60px top-bottom, 80px left-right */
+  text-align: center;
+
+  border-radius: 0% 20% / 20% 50%;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  max-width: 100%; /* চাইলে ছোট করো */
+  margin: 0 auto;
+}
+
+
+.slide-down {
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: slideDown 1s ease-out forwards;
+}
+@keyframes slideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade-in for paragraph & badge */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+.fade-in-delay {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Image animation (page load only) */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 1s;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 1s;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Start About pange */
+
+.app-fixed {
+  position: relative;
+  background: white; /* নিচের অংশ সাদা থাকবে */
+  border: 50px solid white;
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 0; /* header er niche jeno na chole jay */
+}
+
+/* Background শুধু নির্দিষ্ট height পর্যন্ত */
+.app-fixed::before {
+  content: "";
+  position: absolute;
+  top: 0; /* section এর ভেতরের শুরু থেকে */
+  left: 0;
+  right: 0;
+  height: 500px; /* fixed background height */
+  background: url('BG/BG2.gif') no-repeat center;
+  background-size: contain;
+  opacity: 0.6;
+  z-index: -2;
+  border-radius: 20px 20px 0 0;
+}
+
+/* Gradient overlay */
+.app-fixed::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 500px;
+  background: radial-gradient(
+    circle at center,
+    rgba(231, 54, 201, 0.7) 0%,
+    rgba(98, 39, 133, 0.7) 100%
+  );
+  z-index: -1;
+  border-radius: 20px 20px 0 0;
+}
+
+@media (max-width: 640px) {
+  .app-fixed {
+    border: 20px solid #7c3aed;;   /* mobile এ ছোট border */
+    border-radius: 40px;        /* চাইলে radius-ও ছোট করতে পারো */
+  }
+}
+
+.about {
+  position: relative;
+  color: rgb(136, 69, 144);
+
+  border: 50px solid #7c3aed;
+  border-radius: 20px;
+  overflow: hidden; /* border-radius এর বাইরে কিছু কাটবে */
+}
+
+/* Background image with opacity */
+.about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('BG/BG2.gif') no-repeat center;
+  background-size: contain; /* contain অনুযায়ী থাকবে */
+  opacity: 0.6; /* এখানে কমাও/বাড়াও (0.1 - 1) */
+  z-index: -2;
+  border-radius: inherit;
+}
+
+/* Gradient overlay */
+.about::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(231, 54, 201, 0.7) 0%,
+    rgba(98, 39, 133, 0.7) 100%
+  );
+  z-index: -1;
+  border-radius: inherit;
+}
+
+@media (max-width: 640px) {
+  .about {
+    border: 20px solid #7c3aed;   /* mobile এ ছোট border */
+    border-radius: 40px;        /* চাইলে radius-ও ছোট করতে পারো */
+  }
+}
+
+/* head animation */
+
+.border-animate {
+  position: relative;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.border-animate span {
+  position: absolute;
+  background-color: #e879f9; /* purple-700 */
+  transition: all 0.3s ease;
+}
+
+/* Top border */
+.border-animate span:nth-child(1) {
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0;
+}
+.border-animate.active span:nth-child(1) {
+  width: 100%;
+  transition-delay: 0s;
+}
+
+/* Right border */
+.border-animate span:nth-child(2) {
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 0;
+}
+.border-animate.active span:nth-child(2) {
+  height: 100%;
+  transition-delay: 0.1s;
+}
+
+/* Bottom border */
+.border-animate span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  height: 4px;
+  width: 0;
+}
+.border-animate.active span:nth-child(3) {
+  width: 100%;
+  transition-delay: 0.2s;
+}
+
+/* Left border */
+.border-animate span:nth-child(4) {
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+}
+.border-animate.active span:nth-child(4) {
+  height: 100%;
+  transition-delay: 0.3s;
+}
+
+
+
+/* Common class for both images */
+
+#ui_border {
+    position: relative;
+    width: 18%;  /* desktop width */
+    height: auto;
+    right: 25%; /* desktop position */
+}
+
+/* Layer adjustments */
+#ui_layer2 {
+    position: absolute;
+    top: 0;
+    right: 10%; /* start position */
+    transform: translateX(80%);
+    z-index: 0;
+    opacity: 0.8;
+    transition: transform 0.2s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) { /* tablet and below */
+    #ui_border {
+        width: 50%;
+        right: 0;
+    }
+    #ui_layer2 {
+        right: 5%;
+        transform: translateX(0); /* reset translate for small screen */
+    }
+}
+
+@media (max-width: 480px) { /* small mobile */
+    #ui_border {
+        width: 80%;
+        right: 0;
+    }
+    #ui_layer2 {
+        right: 2%;
+        transform: translateX(0);
+    }
+}
+
+/* Circle */
+
+.circle {
+  width: 20px;
+  height: 20px;
+  background-color: #8e44ad; /* purple */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  position: relative;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.circle::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background-color: #fff; /* center dot color */
+  border-radius: 50%;
+  position: absolute;
+}
+
+@keyframes ping-scale {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.8;
+  }
+}
+
+.animate-ping-scale {
+  animation: ping-scale 1.5s infinite ease-in-out;
+}
