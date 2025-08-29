@@ -38,6 +38,10 @@
   #mainHeader nav a[href="#About"] {
     display: none !important;
   }
+
+   #mainHeader #Whatsapp {
+    display: none !important;
+  }
 }
   
 
