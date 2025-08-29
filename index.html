@@ -213,19 +213,19 @@
     <span>Mobile Recharge</span>
   </button>
 
-  <button class="tab-btn bg-purple-200 text-purple-900 text-3xl p-3 rounded-xl font-semibold flex items-center gap-2 feature-card transition-all duration-300 hover:bg-amber-500 hover:scale-105 hover:shadow-lg" data-tab="utility">
-    <img src="https://img.icons8.com/ios-filled/50/000000/bill.png" class="w-10 h-10" />
-    <span>Utility Bills</span>
-  </button>
-
-  <button class="tab-btn bg-purple-200 text-purple-900 text-3xl p-3 rounded-xl font-semibold flex items-center gap-2 feature-card transition-all duration-300 hover:bg-yellow-500 hover:scale-105 hover:shadow-lg" data-tab="bus">
-    <img src="https://img.icons8.com/ios-filled/50/000000/bus.png" class="w-10 h-10" />
-    <span>Bus Ticket</span>
-  </button>
-
-  <button class="tab-btn bg-purple-200 text-purple-900 text-3xl p-3 rounded-xl font-semibold flex items-center gap-2 feature-card transition-all duration-300 hover:bg-lime-500 hover:scale-105 hover:shadow-lg" data-tab="banking">
+  <button class="tab-btn bg-purple-200 text-purple-900 text-3xl p-3 rounded-xl font-semibold flex items-center gap-2 feature-card transition-all duration-300 hover:bg-amber-500 hover:scale-105 hover:shadow-lg" data-tab="banking">
     <img src="https://img.icons8.com/ios-filled/50/000000/bank.png" class="w-10 h-10" />
     <span>Mobile Banking</span>
+  </button>
+
+  <button class="tab-btn bg-purple-200 text-purple-900 text-3xl p-3 rounded-xl font-semibold flex items-center gap-2 feature-card transition-all duration-300 hover:bg-yellow-500 hover:scale-105 hover:shadow-lg" data-tab="utility">
+    <img src="https://img.icons8.com/ios-filled/50/000000/bill.png" class="w-10 h-10" />
+    <span>Utility Bills
+  </button>
+
+  <button class="tab-btn bg-purple-200 text-purple-900 text-3xl p-3 rounded-xl font-semibold flex items-center gap-2 feature-card transition-all duration-300 hover:bg-lime-500 hover:scale-105 hover:shadow-lg" data-tab="bus">
+    <img src="https://img.icons8.com/ios-filled/50/000000/bus.png" class="w-10 h-10" />
+    <span>Bus Ticket</span>
   </button>
 
   <button class="tab-btn bg-purple-200 text-purple-900 text-3xl p-3 rounded-xl font-semibold flex items-center gap-2 feature-card transition-all duration-300 hover:bg-green-500 hover:scale-105 hover:shadow-lg" data-tab="other">
@@ -250,7 +250,20 @@
         </div>
       </div>
 
-<!-- Utility Bills -->
+<!-- Mobile Banking -->
+      <div id="banking" class="tab-content hidden">
+        <h2 class="text-2xl font-bold mb-4 fade-in-up">Mobile Banking</h2>
+        <p class="mb-4 fade-in-up1" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
+  We provide Rocket (Dutch-Bangla Bank pioneered Mobile Banking in Bangladesh) and Meghnapay mobile banking services, such as cash-in, 
+  cash out services across Bangladesh through our PayPlus agent points.
+</p>
+        <div class="flex gap-4 flex-wrap fade-in-up2">
+          <div class="text-purple-900 p-4 rounded-lg shadow"><img src="/logo/MeghnaPay.png" class="w-32 h-20 object-contain"></div>
+          <div class="text-purple-900 p-4 rounded-lg shadow"><img src="/logo/Rocket.png" class="w-32 h-20 object-contain"></div>
+      
+        </div>
+      </div>
+      <!-- Utility Bills -->
 <div id="utility" class="tab-content hidden">
   <h2 class="text-2xl font-bold mb-4 fade-in-up">Utility Bills</h2>
   <p class="mb-4 fade-in-up" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">Pay electricity, water, gas and internet bills easily.</p>
@@ -317,7 +330,8 @@
   </div>
 </div>
 
-      <!-- Bus Ticket -->
+
+        <!-- Bus Ticket -->
       <div id="bus" class="tab-content hidden">
         <h2 class="text-2xl font-bold mb-4 fade-in-up">Bus Ticket</h2>
         <p class="mb-4 fade-in-up1" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">Bus tickets of more than 100+ prominent and top bus operators in the country covering around 3500+ routes across Bangladesh.</p>
@@ -325,20 +339,6 @@
           <div class="bg-white text-purple-900 p-4 rounded-lg shadow">
             <img src="/images/Pic.jpeg" class="object-contain">
           </div>
-        </div>
-      </div>
-
-      <!-- Mobile Banking -->
-      <div id="banking" class="tab-content hidden">
-        <h2 class="text-2xl font-bold mb-4 fade-in-up">Mobile Banking</h2>
-        <p class="mb-4 fade-in-up1" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
-  We provide Rocket (Dutch-Bangla Bank pioneered Mobile Banking in Bangladesh) and Meghnapay mobile banking services, such as cash-in, 
-  cash out services across Bangladesh through our PayPlus agent points.
-</p>
-        <div class="flex gap-4 flex-wrap fade-in-up2">
-          <div class="text-purple-900 p-4 rounded-lg shadow"><img src="/logo/MeghnaPay.png" class="w-32 h-20 object-contain"></div>
-          <div class="text-purple-900 p-4 rounded-lg shadow"><img src="/logo/Rocket.png" class="w-32 h-20 object-contain"></div>
-      
         </div>
       </div>
 
@@ -838,6 +838,33 @@ window.addEventListener('scroll', function() {
 
         observer.observe(featureSection);
     });
+</script>
+
+<!-- Headder border effect -->
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll("section"); // All sections
+  const navLinks = document.querySelectorAll("nav a.border-animate");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100; // adjust for header height
+      if (pageYOffset >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href").includes(current)) {
+        link.classList.add("active");
+      }
+    });
+  });
+});
 </script>
 
 

@@ -35,7 +35,7 @@
     padding-right: 20px;
   }
 
-  #mainHeader nav a[href="#feature"] {
+  #mainHeader nav a[href="#About"] {
     display: none !important;
   }
 }
@@ -330,6 +330,20 @@ html {
 .border-animate.active span:nth-child(4) {
   height: 100%;
   transition-delay: 0.3s;
+}
+
+/* Hover effect keep */
+.border-animate:hover span:nth-child(1) {
+  width: 100%;
+}
+.border-animate:hover span:nth-child(2) {
+  height: 100%;
+}
+.border-animate:hover span:nth-child(3) {
+  width: 100%;
+}
+.border-animate:hover span:nth-child(4) {
+  height: 100%;
 }
 
 
