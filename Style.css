@@ -435,11 +435,3 @@ html {
   animation: ping-scale 1.5s infinite ease-in-out;
 }
 
-
-body {
-  zoom: 0.90;  /* Chrome, Edge, IE এর জন্য কাজ করে */
-  -moz-transform: scale(0.90); /* Firefox এর জন্য */
-  -moz-transform-origin: 0 0;
-  -o-transform: scale(0.90);   /* Opera পুরোনো ভার্সন */
-  -o-transform-origin: 0 0;
-}
