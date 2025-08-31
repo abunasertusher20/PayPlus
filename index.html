@@ -623,23 +623,24 @@
         goToSlide(currentIndex + 1);
     }, 4000);
 
-    // Prev/Next button events
-    document.getElementById('prev').addEventListener('click', () => {
-        goToSlide(currentIndex - 1);
-        resetAutoSlide();
-    });
-    document.getElementById('next').addEventListener('click', () => {
-        goToSlide(currentIndex + 1);
-        resetAutoSlide();
-    });
-
-    // Reset auto sliding timer
+    // Reset auto slide when user clicks button
     function resetAutoSlide() {
         clearInterval(autoSlide);
         autoSlide = setInterval(() => {
             goToSlide(currentIndex + 1);
         }, 4000);
     }
+
+    // Prev/Next button events
+    document.getElementById('prev').addEventListener('click', () => {
+        goToSlide(currentIndex - 1);
+        resetAutoSlide();
+    });
+
+    document.getElementById('next').addEventListener('click', () => {
+        goToSlide(currentIndex + 1);
+        resetAutoSlide();
+    });
 </script>
 
 <script>
